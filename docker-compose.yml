@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 80:80
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
